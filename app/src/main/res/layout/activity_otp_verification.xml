@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layout_for_snackbar"
+    android:background="@color/background_color"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context="com.hackerkernel.humhai.activity.OtpVerificationActivity">
+
+
+        <include layout="@layout/include_toolbar"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:id="@+id/otp_textview"
+            android:textColor="@color/primary"
+            style="@style/Base.TextAppearance.AppCompat.Medium"
+            android:text="@string/otp_has_been_send_to"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText_OTP"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:hint="@string/enter_otp"
+            android:background="@drawable/custom_edittext"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:text="@string/verify_otp"
+            android:textColor="@color/icons"
+            android:background="@drawable/accent_button_round"
+            android:id="@+id/button_sendOTP"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+</ScrollView>

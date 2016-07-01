@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary"
+    tools:context=".activity.MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome To"
+        android:id="@+id/welcome_label"
+        android:textColor="@color/icons"
+        android:textSize="35sp"
+        android:textStyle="italic|bold"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"/>
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/welcome_label"
+        android:layout_marginTop="10dp"
+        android:id="@+id/humhain_logo"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/hum_hai_logo"/>
+
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/navigate_to_login_btn"
+        android:layout_alignParentBottom="true"
+        android:text="@string/login"
+        android:textColor="@color/icons"
+        android:background="@drawable/dark_purple_button"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/navigate_to_register_btn"
+        android:layout_above="@id/navigate_to_login_btn"
+        android:text="@string/register"
+        android:textColor="@color/icons"
+        android:background="@drawable/accent_button"
+        />
+
+</RelativeLayout>

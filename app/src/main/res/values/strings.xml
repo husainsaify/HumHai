@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">HumHai</string>
+    <string name="login">login</string>
+    <string name="register">Register</string>
+    <string name="mobile_number">Mobile number</string>
+    <string name="password">Password</string>
+    <string name="fullname">Fullname</string>
+    <string name="email">Email</string>
+    <string name="oops">oops</string>
+    <string name="dont_worry_engineers_r_working">Some Issue from our end. But Don\'t Worry Our Engineers Are Working On this</string>
+    <string name="report_issue">Report Issue</string>
+    <string name="try_again">Try Again</string>
+    <string name="retry">retry</string>
+    <string name="no_internet_connection">No Internet Connection</string>
+    <string name="ok">Ok</string>
+    <string name="processing">Processing..</string>
+    <string name="verify_otp">Verify OTP</string>
+    <string name="enter_otp">Enter OTP</string>
+    <string name="otp_has_been_send_to">OTP has been send to</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="where_to_serve">Where to serve</string>
+</resources>
