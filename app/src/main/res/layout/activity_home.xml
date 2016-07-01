@@ -18,8 +18,9 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/accent_button"
+        android:background="@drawable/primary_button"
         android:text="@string/where_to_serve"
         android:textColor="@color/icons"
+        android:onClick="openServiceActivity"
         />
 </LinearLayout>

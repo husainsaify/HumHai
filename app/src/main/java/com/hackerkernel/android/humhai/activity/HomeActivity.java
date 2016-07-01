@@ -1,6 +1,7 @@
 package com.hackerkernel.android.humhai.activity;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -42,6 +44,7 @@ public class HomeActivity extends BaseAuthActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -185,5 +188,12 @@ public class HomeActivity extends BaseAuthActivity implements
     @Override
     public void onMarkerDragEnd(Marker marker) {
 
+    }
+
+    /*
+    * Method to open service activity
+    * */
+    public void openServiceActivity(View view) {
+        startActivity(new Intent(this,SelectServicesActivity.class));
     }
 }
