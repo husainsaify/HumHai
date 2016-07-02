@@ -17,6 +17,7 @@ public class Constants {
             COM_PASSWORD = "password",
             COM_EMAIL = "email",
             COM_IMG = "img",
+            COM_IMAGE = "image",
             COM_GENDER = "gender",
             COM_AGE = "age",
             COM_BLOOD = "blood",
@@ -49,12 +50,7 @@ public class Constants {
             LOC_LATITUDE = "latitude",
             LOC_LONGITUDE = "longitude";
 
-    public static final String FEED_TYPE = "type",
-            FEED_USER_ID = "user_id",
-            FEED_USER_MOBILE = "user_mobile",
-            FEED_USER_FULLNAME = "user_fullname",
-            FEED_USER_IMAGE = "user_image",
-            FEED_USER_LIKED = "user_liked";
+    public static final String RES_LIST_DELIVERY_TIME = "deliverytime";
 
     public static final String DEAL_BOOKED_STATUS = "booked_deal";
 

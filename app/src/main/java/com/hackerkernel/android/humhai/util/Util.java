@@ -11,9 +11,11 @@ import android.net.Uri;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 
@@ -186,5 +188,23 @@ public class Util {
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
         activity.startActivity(intent);
         activity.finish();
+    }
+
+    /*
+    * Method to show progressbar and hide view
+    * */
+    public static void showProgressbarAndHideView(ProgressBar pb,View view){
+            //show pb hide rc
+            pb.setVisibility(View.VISIBLE);
+            view.setVisibility(View.GONE);
+    }
+
+    /*
+    * Method to hide progressbar and show view
+    * */
+    public static void hideProgressbarAndShowView(ProgressBar pb,View view){
+        //hide pb show rc
+        view.setVisibility(View.VISIBLE);
+        pb.setVisibility(View.GONE);
     }
 }

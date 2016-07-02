@@ -2,6 +2,7 @@ package com.hackerkernel.android.humhai.adapter;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.hackerkernel.android.humhai.R;
+import com.hackerkernel.android.humhai.activity.RestaurantListActivity;
 import com.hackerkernel.android.humhai.pojo.SelectServicePojo;
 
 import java.util.List;
@@ -29,20 +31,29 @@ public class SelectServiceAdapter extends RecyclerView.Adapter<SelectServiceAdap
         this.list = list;
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         @BindView(R.id.service_image) ImageView mImage;
         @BindView(R.id.service_name) TextView mName;
 
         public MyViewHolder(View view) {
             super(view);
             ButterKnife.bind(this,view);
+            view.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            int pos = getAdapterPosition();
+            if (pos == 0){
+                context.startActivity(new Intent(context, RestaurantListActivity.class));
+            }
         }
     }
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.select_service_row, parent, false);
+                .inflate(R.layout.select_service_list_row, parent, false);
 
         return new MyViewHolder(itemView);
     }

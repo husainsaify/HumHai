@@ -4,17 +4,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:id="@+id/layout_for_snackbar"
     android:background="@color/background_color"
-    tools:context="com.hackerkernel.android.humhai.activity.SelectServicesActivity">
+    tools:context=".activity.RestaurantListActivity">
 
     <include layout="@layout/include_toolbar"/>
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:id="@+id/service_recyclerview" />
+        android:id="@+id/hotel_recyclerview"
+        android:visibility="visible"/>
+   
+    <ProgressBar
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/hotel_progressbar"
+        android:visibility="gone"/>
 </LinearLayout>
