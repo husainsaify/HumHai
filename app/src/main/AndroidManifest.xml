@@ -43,11 +43,18 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activity.MainActivity" />
         </activity>
-        <activity android:name=".activity.RestaurantListActivity"
+        <activity
+            android:name=".activity.RestaurantListActivity"
             android:parentActivityName=".activity.SelectServicesActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activity.SelectServicesActivity" />
+        </activity>
+        <activity android:name=".activity.RestaurantFoodCategoryListActivity"
+            android:parentActivityName=".activity.RestaurantListActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.RestaurantListActivity" />
         </activity>
 
         <!--
@@ -61,6 +68,8 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
+
+
     </application>
 
 </manifest>

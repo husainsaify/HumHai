@@ -8,12 +8,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.hackerkernel.android.humhai.R;
 import com.hackerkernel.android.humhai.activity.RestaurantFoodCategoryListActivity;
 import com.hackerkernel.android.humhai.constant.Constants;
 import com.hackerkernel.android.humhai.constant.EndPoints;
+import com.hackerkernel.android.humhai.pojo.RestaurantFoodCategoryListPojo;
 import com.hackerkernel.android.humhai.pojo.RestaurantListPojo;
 
 import java.util.List;
@@ -24,27 +26,27 @@ import butterknife.ButterKnife;
 /**
  * Created by husain on 7/2/2016.
  */
-public class RestaurantListAdapter extends RecyclerView.Adapter<RestaurantListAdapter.MyViewHolder> {
+public class RestaurantFoodCategoryListAdapter extends RecyclerView.Adapter<RestaurantFoodCategoryListAdapter.MyViewHolder> {
     private Context context;
-    private List<RestaurantListPojo> list;
+    private List<RestaurantFoodCategoryListPojo> list;
 
-    public RestaurantListAdapter(Context context, List<RestaurantListPojo> list){
+    public RestaurantFoodCategoryListAdapter(Context context, List<RestaurantFoodCategoryListPojo> list){
         this.context = context;
         this.list = list;
     }
 
     @Override
-    public RestaurantListAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public RestaurantFoodCategoryListAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.restaurant_list_row,parent,false);
+                .inflate(R.layout.restaurant_food_category_list_row,parent,false);
         return new MyViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(RestaurantListAdapter.MyViewHolder holder, int position) {
-        RestaurantListPojo current = list.get(position);
+    public void onBindViewHolder(RestaurantFoodCategoryListAdapter.MyViewHolder holder, int position) {
+        RestaurantFoodCategoryListPojo current = list.get(position);
         holder.name.setText(current.getName());
-        holder.deliveryTime.setText(current.getDeliveryTime());
+        holder.count.setText(current.getCount());
 
         //set image
         if (current.getImage() != null){
@@ -62,9 +64,10 @@ public class RestaurantListAdapter extends RecyclerView.Adapter<RestaurantListAd
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        @BindView(R.id.restaurant_image) ImageView image;
-        @BindView(R.id.restaurant_name) TextView name;
-        @BindView(R.id.restaurant_delivery_time) TextView deliveryTime;
+        @BindView(R.id.image) ImageView image;
+        @BindView(R.id.name) TextView name;
+        @BindView(R.id.count) TextView count;
+
         public MyViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this,itemView);
@@ -75,11 +78,7 @@ public class RestaurantListAdapter extends RecyclerView.Adapter<RestaurantListAd
         @Override
         public void onClick(View v) {
             int pos = getAdapterPosition();
-            //open food category
-            Intent intent = new Intent(context, RestaurantFoodCategoryListActivity.class);
-            intent.putExtra(Constants.COM_HOTEL_ID,list.get(pos).getId());
-            intent.putExtra(Constants.COM_NAME,list.get(pos).getName());
-            context.startActivity(intent);
+            Toast.makeText(context,pos+"",Toast.LENGTH_LONG).show();
         }
     }
 }

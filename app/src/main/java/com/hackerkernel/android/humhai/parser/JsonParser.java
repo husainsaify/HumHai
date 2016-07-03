@@ -3,6 +3,7 @@ package com.hackerkernel.android.humhai.parser;
 
 
 import com.hackerkernel.android.humhai.constant.Constants;
+import com.hackerkernel.android.humhai.pojo.RestaurantFoodCategoryListPojo;
 import com.hackerkernel.android.humhai.pojo.RestaurantListPojo;
 import com.hackerkernel.android.humhai.pojo.SimplePojo;
 
@@ -36,6 +37,20 @@ public class JsonParser {
             pojo.setName(jo.getString(Constants.COM_NAME));
             pojo.setImage(jo.getString(Constants.COM_IMAGE));
             pojo.setDeliveryTime(jo.getString(Constants.RES_LIST_DELIVERY_TIME));
+            list.add(pojo);
+        }
+        return list;
+    }
+
+    public static List<RestaurantFoodCategoryListPojo> RestaurantFoodCategoryListParser(JSONArray dataArray) throws JSONException {
+        List<RestaurantFoodCategoryListPojo> list = new ArrayList<>();
+        for (int i = 0; i < dataArray.length(); i++) {
+            JSONObject jo = dataArray.getJSONObject(i);
+            RestaurantFoodCategoryListPojo pojo = new RestaurantFoodCategoryListPojo();
+            pojo.setId(jo.getString(Constants.COM_ID));
+            pojo.setName(jo.getString(Constants.COM_NAME));
+            pojo.setImage(jo.getString(Constants.COM_IMAGE));
+            pojo.setCount(jo.getString(Constants.COM_COUNT));
             list.add(pojo);
         }
         return list;

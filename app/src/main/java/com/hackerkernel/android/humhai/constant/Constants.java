@@ -17,6 +17,7 @@ public class Constants {
             COM_PASSWORD = "password",
             COM_EMAIL = "email",
             COM_IMG = "img",
+            COM_HOTEL_ID = "hotel_id",
             COM_IMAGE = "image",
             COM_GENDER = "gender",
             COM_AGE = "age",
