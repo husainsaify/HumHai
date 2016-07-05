@@ -3,15 +3,18 @@ package com.hackerkernel.android.humhai.pojo;
 /**
  * Created by husain on 7/3/2016.
  */
-public class RestaurantFoodCategoryListPojo {
-    private String id, name, image, count;
+public class RestaurantFoodTypeListPojo {
+    private String id,
+            hotelId,
+            name,
+            image;
 
-    public String getCount() {
-        return count;
+    public String getHotelId() {
+        return hotelId;
     }
 
-    public void setCount(String count) {
-        this.count = count;
+    public void setHotelId(String hotelId) {
+        this.hotelId = hotelId;
     }
 
     public String getImage() {

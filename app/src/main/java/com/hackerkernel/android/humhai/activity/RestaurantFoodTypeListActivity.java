@@ -15,15 +15,13 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.hackerkernel.android.humhai.R;
-import com.hackerkernel.android.humhai.adapter.RestaurantFoodCategoryListAdapter;
-import com.hackerkernel.android.humhai.adapter.RestaurantListAdapter;
+import com.hackerkernel.android.humhai.adapter.RestaurantFoodTypeListAdapter;
 import com.hackerkernel.android.humhai.constant.Constants;
 import com.hackerkernel.android.humhai.constant.EndPoints;
 import com.hackerkernel.android.humhai.infrastructure.BaseAuthActivity;
 import com.hackerkernel.android.humhai.network.MyVolley;
 import com.hackerkernel.android.humhai.parser.JsonParser;
-import com.hackerkernel.android.humhai.pojo.RestaurantFoodCategoryListPojo;
-import com.hackerkernel.android.humhai.pojo.RestaurantListPojo;
+import com.hackerkernel.android.humhai.pojo.RestaurantFoodTypeListPojo;
 import com.hackerkernel.android.humhai.storage.MySharedPreferences;
 import com.hackerkernel.android.humhai.util.Util;
 
@@ -38,7 +36,7 @@ import java.util.Map;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class RestaurantFoodCategoryListActivity extends BaseAuthActivity {
+public class RestaurantFoodTypeListActivity extends BaseAuthActivity {
     private static final String TAG = RestaurantListActivity.class.getSimpleName();
     @BindView(R.id.toolbar) Toolbar mToolbar;
     @BindView(R.id.progressbar) ProgressBar mHotelProgressbar;
@@ -75,26 +73,26 @@ public class RestaurantFoodCategoryListActivity extends BaseAuthActivity {
         LinearLayoutManager manager = new LinearLayoutManager(this);
         mHotelRecyclerview.setLayoutManager(manager);
 
-        checkInternetAndFetchCategory();
+        checkInternetAndFetchFoodType();
     }
 
-    private void checkInternetAndFetchCategory() {
+    private void checkInternetAndFetchFoodType() {
         if (Util.isNetworkAvailable()){
-            fetchCategoryInBackground();
+            fetchFoodTypeInBackground();
         }else{
             Util.noInternetSnackBar(this,mLayoutForSnackbar);
         }
     }
 
-    private void fetchCategoryInBackground() {
+    private void fetchFoodTypeInBackground() {
         //show pb hide rc
         Util.showProgressbarAndHideView(mHotelProgressbar,mHotelRecyclerview);
-        StringRequest request = new StringRequest(Request.Method.POST, EndPoints.GET_RESTAURANT_FOOD_CATEGORY, new Response.Listener<String>() {
+        StringRequest request = new StringRequest(Request.Method.POST, EndPoints.GET_RESTAURANT_FOOD_TYPE, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 //hide pb show rc
                 Util.hideProgressbarAndShowView(mHotelProgressbar,mHotelRecyclerview);
-                parseCategoryResponse(response);
+                parseFoodTypeResponse(response);
             }
         }, new Response.ErrorListener() {
             @Override
@@ -125,7 +123,7 @@ public class RestaurantFoodCategoryListActivity extends BaseAuthActivity {
     /*
     * Method to parse restaurant response
     * */
-    private void parseCategoryResponse(String response) {
+    private void parseFoodTypeResponse(String response) {
         try {
             JSONObject jsonObject = new JSONObject(response);
             boolean returned = jsonObject.getBoolean(Constants.COM_RETURN);
@@ -135,7 +133,6 @@ public class RestaurantFoodCategoryListActivity extends BaseAuthActivity {
             * If returned is true check count of the resturatn
             * */
             if (returned){
-                Log.d(TAG,"HUS: "+response);
                 //true
                 int count = jsonObject.getInt(Constants.COM_COUNT);
                 /*
@@ -148,7 +145,7 @@ public class RestaurantFoodCategoryListActivity extends BaseAuthActivity {
                 }else {
                     JSONArray dataArray = jsonObject.getJSONArray(Constants.COM_DATA);
                     // parse hotel data
-                    List<RestaurantFoodCategoryListPojo> list = JsonParser.RestaurantFoodCategoryListParser(dataArray);
+                    List<RestaurantFoodTypeListPojo> list = JsonParser.RestaurantFoodTypeListParser(dataArray);
                     setupAdapter(list);
                 }
             }else {
@@ -161,8 +158,8 @@ public class RestaurantFoodCategoryListActivity extends BaseAuthActivity {
         }
     }
 
-    private void setupAdapter(List<RestaurantFoodCategoryListPojo> list) {
-        RestaurantFoodCategoryListAdapter adapter = new RestaurantFoodCategoryListAdapter(this,list);
+    private void setupAdapter(List<RestaurantFoodTypeListPojo> list) {
+        RestaurantFoodTypeListAdapter adapter = new RestaurantFoodTypeListAdapter(this,list);
         Util.hideProgressbarAndShowView(mHotelProgressbar,mHotelRecyclerview);
         //mHotelRecyclerview.addItemDecoration(new DividerItemDecoration(this,LinearLayoutManager.VERTICAL));
         mHotelRecyclerview.setAdapter(adapter);

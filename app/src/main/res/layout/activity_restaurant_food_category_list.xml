@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:id="@+id/layout_for_snackbar"
-    tools:context="com.hackerkernel.android.humhai.activity.RestaurantFoodCategoryListActivity">
+    tools:context=".activity.RestaurantFoodTypeListActivity">
 
     <include layout="@layout/include_toolbar"/>
 

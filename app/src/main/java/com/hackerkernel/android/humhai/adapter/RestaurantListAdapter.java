@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.hackerkernel.android.humhai.R;
-import com.hackerkernel.android.humhai.activity.RestaurantFoodCategoryListActivity;
+import com.hackerkernel.android.humhai.activity.RestaurantFoodTypeListActivity;
 import com.hackerkernel.android.humhai.constant.Constants;
 import com.hackerkernel.android.humhai.constant.EndPoints;
 import com.hackerkernel.android.humhai.pojo.RestaurantListPojo;
@@ -76,7 +76,7 @@ public class RestaurantListAdapter extends RecyclerView.Adapter<RestaurantListAd
         public void onClick(View v) {
             int pos = getAdapterPosition();
             //open food category
-            Intent intent = new Intent(context, RestaurantFoodCategoryListActivity.class);
+            Intent intent = new Intent(context, RestaurantFoodTypeListActivity.class);
             intent.putExtra(Constants.COM_HOTEL_ID,list.get(pos).getId());
             intent.putExtra(Constants.COM_NAME,list.get(pos).getName());
             context.startActivity(intent);

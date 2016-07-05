@@ -7,13 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.hackerkernel.android.humhai.R;
-import com.hackerkernel.android.humhai.constant.EndPoints;
 import com.hackerkernel.android.humhai.pojo.DiscountOffersListPojo;
-import com.hackerkernel.android.humhai.pojo.RestaurantFoodCategoryListPojo;
 
 import java.util.List;
 

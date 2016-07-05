@@ -50,7 +50,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activity.SelectServicesActivity" />
         </activity>
-        <activity android:name=".activity.RestaurantFoodCategoryListActivity"
+        <activity android:name=".activity.RestaurantFoodTypeListActivity"
             android:parentActivityName=".activity.RestaurantListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
