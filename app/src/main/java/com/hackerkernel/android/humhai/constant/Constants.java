@@ -19,7 +19,7 @@ public class Constants {
             COM_IMG = "img",
             COM_HOTEL_ID = "hotel_id",
             COM_IMAGE = "image",
-            COM_GENDER = "gender",
+            COM_FOOD_TYPE_ID = "food_type_id",
             COM_AGE = "age",
             COM_BLOOD = "blood",
             COM_RETURN = "return",

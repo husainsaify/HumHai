@@ -50,7 +50,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activity.SelectServicesActivity" />
         </activity>
-        <activity android:name=".activity.RestaurantFoodTypeListActivity"
+        <activity
+            android:name=".activity.RestaurantFoodTypeListActivity"
             android:parentActivityName=".activity.RestaurantListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -69,7 +70,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-
+        <activity android:name=".activity.RestaurantFoodCategoryListActivity"></activity>
     </application>
 
 </manifest>

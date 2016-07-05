@@ -14,6 +14,7 @@ import com.hackerkernel.android.humhai.R;
 import com.hackerkernel.android.humhai.activity.RestaurantFoodCategoryListActivity;
 import com.hackerkernel.android.humhai.constant.Constants;
 import com.hackerkernel.android.humhai.constant.EndPoints;
+import com.hackerkernel.android.humhai.pojo.RestaurantFoodCategoryListPojo;
 import com.hackerkernel.android.humhai.pojo.RestaurantFoodTypeListPojo;
 
 import java.util.List;
@@ -24,27 +25,27 @@ import butterknife.ButterKnife;
 /**
  * Created by husain on 7/2/2016.
  */
-public class RestaurantFoodTypeListAdapter extends RecyclerView.Adapter<RestaurantFoodTypeListAdapter.MyViewHolder> {
+public class RestaurantFoodCategoryListAdapter extends RecyclerView.Adapter<RestaurantFoodCategoryListAdapter.MyViewHolder> {
     private Context context;
-    private List<RestaurantFoodTypeListPojo> list;
+    private List<RestaurantFoodCategoryListPojo> list;
 
-    public RestaurantFoodTypeListAdapter(Context context, List<RestaurantFoodTypeListPojo> list){
+    public RestaurantFoodCategoryListAdapter(Context context, List<RestaurantFoodCategoryListPojo> list){
         this.context = context;
         this.list = list;
     }
 
     @Override
-    public RestaurantFoodTypeListAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public RestaurantFoodCategoryListAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.restaurant_food_category_list_row,parent,false);
         return new MyViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(RestaurantFoodTypeListAdapter.MyViewHolder holder, int position) {
-        RestaurantFoodTypeListPojo current = list.get(position);
+    public void onBindViewHolder(RestaurantFoodCategoryListAdapter.MyViewHolder holder, int position) {
+        RestaurantFoodCategoryListPojo current = list.get(position);
         holder.name.setText(current.getName());
-        holder.count.setVisibility(View.GONE);
+        holder.count.setText(current.getCount());
 
         //set image
         if (current.getImage() != null){
@@ -75,14 +76,7 @@ public class RestaurantFoodTypeListAdapter extends RecyclerView.Adapter<Restaura
 
         @Override
         public void onClick(View v) {
-            //open Food Category List activity with HotelId & FoodTypeId As extras
-            int pos = getAdapterPosition();
-            String hotelId = list.get(pos).getHotelId();
-            String foodTypeId = list.get(pos).getId();
-            Intent intent = new Intent(context, RestaurantFoodCategoryListActivity.class);
-            intent.putExtra(Constants.COM_HOTEL_ID,hotelId);
-            intent.putExtra(Constants.COM_FOOD_TYPE_ID,foodTypeId);
-            context.startActivity(intent);
+
         }
     }
 }
