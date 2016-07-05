@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:id="@+id/layout_for_snackbar"
     android:background="@color/background_color"
     tools:context="com.hackerkernel.android.humhai.activity.SelectServicesActivity">
 
@@ -11,10 +12,28 @@
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
+        android:layout_height="wrap_content"
         android:id="@+id/service_recyclerview" />
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/discount_recyclerview"
+        />
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:id="@+id/progressbar"
+        android:visibility="gone"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        style="@style/Base.TextAppearance.AppCompat.Medium"
+        android:layout_margin="10dp"
+        android:id="@+id/placeholder"
+        android:visibility="gone"/>
+
 </LinearLayout>

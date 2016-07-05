@@ -12,5 +12,6 @@ public class EndPoints {
             VERIFY_OTP = BASE_URL + "verifyOtp.php",
             GET_RESTAURANT_LIST = BASE_URL + "getHotelList.php",
             GET_RESTAURANT_FOOD_CATEGORY = BASE_URL + "getFoodCategoryList.php",
-            IMAGE_BASE_URL = SERVER_URL;
+            IMAGE_BASE_URL = SERVER_URL,
+            GET_DISCOUNT_OFFER_LIST = BASE_URL + "getDiscountOffers.php";
 }
