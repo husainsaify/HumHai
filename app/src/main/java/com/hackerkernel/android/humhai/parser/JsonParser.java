@@ -1,10 +1,10 @@
 package com.hackerkernel.android.humhai.parser;
 
 
-
 import com.hackerkernel.android.humhai.constant.Constants;
 import com.hackerkernel.android.humhai.pojo.DiscountOffersListPojo;
 import com.hackerkernel.android.humhai.pojo.RestaurantFoodCategoryListPojo;
+import com.hackerkernel.android.humhai.pojo.RestaurantFoodListPojo;
 import com.hackerkernel.android.humhai.pojo.RestaurantFoodTypeListPojo;
 import com.hackerkernel.android.humhai.pojo.RestaurantListPojo;
 import com.hackerkernel.android.humhai.pojo.SimplePojo;
@@ -89,5 +89,24 @@ public class JsonParser {
         return list;
     }
 
+    /*
+    * Method to parse food list
+    * */
+    public static List<RestaurantFoodListPojo> RestaurantFoodListParser(JSONArray dataArray) throws JSONException {
+        List<RestaurantFoodListPojo> list = new ArrayList<>();
+        for (int i = 0; i < dataArray.length(); i++) {
+            JSONObject jo = dataArray.getJSONObject(i);
+            RestaurantFoodListPojo pojo = new RestaurantFoodListPojo();
+            pojo.setId(jo.getString(Constants.COM_ID));
+            pojo.setHotelId(jo.getString(Constants.COM_HOTEL_ID));
+            pojo.setFoodCategoryId(jo.getString(Constants.COM_FOOD_CATEGORY_ID));
+            pojo.setName(jo.getString(Constants.COM_NAME));
+            pojo.setImageUrl(jo.getString(Constants.COM_IMAGE));
+            pojo.setUnit(jo.getString(Constants.COM_UNIT));
+            pojo.setPrice(jo.getString(Constants.COM_PRICE));
+            list.add(pojo);
+        }
+        return list;
+    }
 }
 

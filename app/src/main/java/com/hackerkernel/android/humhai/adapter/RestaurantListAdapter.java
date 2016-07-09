@@ -47,12 +47,15 @@ public class RestaurantListAdapter extends RecyclerView.Adapter<RestaurantListAd
         holder.deliveryTime.setText(current.getDeliveryTime());
 
         //set image
-        if (current.getImage() != null){
+        if (!current.getImage().isEmpty()){
             String url = EndPoints.IMAGE_BASE_URL+ current.getImage();
             Glide.with(context)
                     .load(url)
                     .thumbnail(0.5f)
+                    .placeholder(R.drawable.default_icon)
                     .into(holder.image);
+        }else {
+            holder.image.setImageResource(R.drawable.default_icon);
         }
     }
 

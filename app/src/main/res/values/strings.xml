@@ -19,4 +19,5 @@
     <string name="otp_has_been_send_to">OTP has been send to</string>
     <string name="title_activity_maps">Map</string>
     <string name="where_to_serve">Where to serve</string>
+    <string name="rupee_sign">\u20B9</string>
 </resources>

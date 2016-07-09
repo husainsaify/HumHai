@@ -64,8 +64,6 @@ public class RestaurantFoodCategoryListActivity extends BaseAuthActivity {
         setSupportActionBar(mToolbar);
         assert getSupportActionBar() != null;
         getSupportActionBar().setTitle("Food Category");
-        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //init volley and sp
         mRequestQueue = MyVolley.getInstance().getRequestQueue();

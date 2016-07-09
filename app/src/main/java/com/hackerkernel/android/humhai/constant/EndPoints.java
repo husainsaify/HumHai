@@ -14,5 +14,6 @@ public class EndPoints {
             GET_RESTAURANT_FOOD_TYPE = BASE_URL + "getFoodTypeList.php",
             GET_RESTAURANT_FOOD_CATEGORY = BASE_URL + "getFoodCategoryList.php",
             IMAGE_BASE_URL = SERVER_URL,
-            GET_DISCOUNT_OFFER_LIST = BASE_URL + "getDiscountOffers.php";
+            GET_DISCOUNT_OFFER_LIST = BASE_URL + "getDiscountOffers.php",
+            GET_FOOD_LIST =  BASE_URL + "getFoodList.php";
 }
