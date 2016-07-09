@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -44,6 +45,7 @@ import butterknife.ButterKnife;
 public class RestaurantFoodListActivity extends AppCompatActivity {
     private static final String TAG = RestaurantFoodListActivity.class.getSimpleName();
     @BindView(R.id.toolbar) Toolbar mToolbar;
+    @BindView(R.id.toolbar_cart_button) Button mToolbarButton;
     @BindView(R.id.progressbar) ProgressBar mProgressbar;
     @BindView(R.id.recycleView) RecyclerView mRecyclerview;
     @BindView(R.id.layout_for_snackbar) View mLayoutForSnackbar;
@@ -69,6 +71,15 @@ public class RestaurantFoodListActivity extends AppCompatActivity {
         mRequestQueue = MyVolley.getInstance().getRequestQueue();
 
         mRecyclerview.setLayoutManager(new LinearLayoutManager(this));
+
+        //init toolbar cart button
+        mToolbarButton.setVisibility(View.VISIBLE);
+        mToolbarButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Util.goToCartActivity(RestaurantFoodListActivity.this);
+            }
+        });
 
         //get hotel & food category id
         if (getIntent().hasExtra(Constants.COM_FOOD_CATEGORY_ID) &&

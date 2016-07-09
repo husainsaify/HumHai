@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -44,6 +45,7 @@ public class RestaurantFoodCategoryListActivity extends BaseAuthActivity {
     private static final String TAG = RestaurantFoodCategoryListActivity.class.getSimpleName();
 
     @BindView(R.id.toolbar) Toolbar mToolbar;
+    @BindView(R.id.toolbar_cart_button) Button mToolbarButton;
     @BindView(R.id.progressbar) ProgressBar mHotelProgressbar;
     @BindView(R.id.recyclerview) RecyclerView mHotelRecyclerview;
     @BindView(R.id.layout_for_snackbar) View mLayoutForSnackbar;
@@ -64,6 +66,15 @@ public class RestaurantFoodCategoryListActivity extends BaseAuthActivity {
         setSupportActionBar(mToolbar);
         assert getSupportActionBar() != null;
         getSupportActionBar().setTitle("Food Category");
+
+        //init toolbar cart button
+        mToolbarButton.setVisibility(View.VISIBLE);
+        mToolbarButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Util.goToCartActivity(RestaurantFoodCategoryListActivity.this);
+            }
+        });
 
         //init volley and sp
         mRequestQueue = MyVolley.getInstance().getRequestQueue();

@@ -4,7 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 
+import com.hackerkernel.android.humhai.R;
+import com.hackerkernel.android.humhai.activity.CartActivity;
 import com.hackerkernel.android.humhai.activity.MainActivity;
 import com.hackerkernel.android.humhai.storage.MySharedPreferences;
 

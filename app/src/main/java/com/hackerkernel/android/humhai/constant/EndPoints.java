@@ -15,5 +15,7 @@ public class EndPoints {
             GET_RESTAURANT_FOOD_CATEGORY = BASE_URL + "getFoodCategoryList.php",
             IMAGE_BASE_URL = SERVER_URL,
             GET_DISCOUNT_OFFER_LIST = BASE_URL + "getDiscountOffers.php",
-            GET_FOOD_LIST =  BASE_URL + "getFoodList.php";
+            GET_FOOD_LIST =  BASE_URL + "getFoodList.php",
+            ADD_FOOD_TO_CART = BASE_URL + "addToCart.php",
+            MINUS_FOOD_FROM_CART = BASE_URL + "minusFromCart.php";
 }

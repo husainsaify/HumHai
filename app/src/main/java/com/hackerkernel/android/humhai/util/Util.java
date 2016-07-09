@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 
 import com.hackerkernel.android.humhai.R;
+import com.hackerkernel.android.humhai.activity.CartActivity;
 import com.hackerkernel.android.humhai.activity.HomeActivity;
 import com.hackerkernel.android.humhai.activity.OtpVerificationActivity;
 import com.hackerkernel.android.humhai.constant.Constants;
@@ -188,6 +189,11 @@ public class Util {
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
         activity.startActivity(intent);
         activity.finish();
+    }
+
+    public static void goToCartActivity(Activity activity) {
+        Intent intent = new Intent(activity, CartActivity.class);
+        activity.startActivity(intent);
     }
 
     /*
