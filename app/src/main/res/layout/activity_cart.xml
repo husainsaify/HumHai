@@ -1,12 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    android:weightSum="1"
+    android:background="@color/background_color"
     tools:context="com.hackerkernel.android.humhai.activity.CartActivity">
 
-</RelativeLayout>
+    <include layout="@layout/include_toolbar"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/recyclerview" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/placeholder"
+        style="@style/Base.TextAppearance.AppCompat.Medium"
+        android:gravity="center"
+        android:visibility="gone"
+        android:layout_margin="10dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:background="#d9d9d9">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Base.TextAppearance.AppCompat.Medium"
+            android:textColor="@color/primary_text"
+            android:id="@+id/total_item"
+            android:layout_alignParentTop="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            style="@style/Base.TextAppearance.AppCompat.Medium"
+            android:textColor="@color/primary_text"
+            android:id="@+id/total_cost"
+            android:layout_alignParentTop="true"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/total_item"
+            android:text="@string/proceed_to_checkout"
+            android:textColor="@color/icons"
+            android:id="@+id/proceed_to_checkout"
+            android:background="@drawable/primary_button" />
+
+    </RelativeLayout>
+</LinearLayout>

@@ -79,10 +79,11 @@ public class RestaurantFoodListAdapter extends RecyclerView.Adapter<RestaurantFo
 
         //set image
         if (!current.getImageUrl().isEmpty()){
-            String url = current.getImageUrl();
+            String url = EndPoints.IMAGE_BASE_URL + current.getImageUrl();
             Glide.with(context)
                     .load(url)
                     .thumbnail(0.5f)
+                    .placeholder(R.drawable.default_icon)
                     .into(holder.image);
         }else {
             holder.image.setImageResource(R.drawable.default_icon);

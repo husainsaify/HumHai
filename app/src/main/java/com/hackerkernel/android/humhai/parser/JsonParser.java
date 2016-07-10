@@ -2,6 +2,7 @@ package com.hackerkernel.android.humhai.parser;
 
 
 import com.hackerkernel.android.humhai.constant.Constants;
+import com.hackerkernel.android.humhai.pojo.CartItemListPojo;
 import com.hackerkernel.android.humhai.pojo.DiscountOffersListPojo;
 import com.hackerkernel.android.humhai.pojo.RestaurantFoodCategoryListPojo;
 import com.hackerkernel.android.humhai.pojo.RestaurantFoodListPojo;
@@ -105,6 +106,25 @@ public class JsonParser {
             pojo.setUnit(jo.getString(Constants.COM_UNIT));
             pojo.setPrice(jo.getString(Constants.COM_PRICE));
             list.add(pojo);
+        }
+        return list;
+    }
+
+    /*
+    * Method to parse cart item response
+    * */
+    public static List<CartItemListPojo> CartItemListParser(JSONArray jsonArray) throws JSONException {
+        List<CartItemListPojo> list = new ArrayList<>();
+        for (int i = 0; i < jsonArray.length(); i++) {
+            JSONObject jo = jsonArray.getJSONObject(i);
+            CartItemListPojo c = new CartItemListPojo();
+            c.setCartId(jo.getString(Constants.COM_CART_ID));
+            c.setFoodId(jo.getString(Constants.COM_FOOD_ID));
+            c.setName(jo.getString(Constants.COM_NAME));
+            c.setImage(jo.getString(Constants.COM_IMAGE));
+            c.setPrice(jo.getString(Constants.COM_PRICE));
+            c.setUnit(jo.getString(Constants.COM_UNIT));
+            list.add(c);
         }
         return list;
     }

@@ -31,17 +31,9 @@ public class Constants {
             COM_DESCRIPTION = "description",
             COM_TIMESTAMP = "timestamp",
             COM_PRICE = "price",
-            COM_SPECIAL_PRIZE = "special_price",
-            COM_ORIGNAL_PRIZE = "orginal_price",
-            COM_STATUS = "status",
-            COM_DATE = "date",
-            COM_TIME = "time",
-            COM_CODE = "code",
-            COM_GCM_REG_ID = "gcm_regid",
-            COM_LASTDONATED = "last_donated",
-            COM_LIKES = "likes",
             COM_TITLE = "title",
-            COM_PUSH_TYPE = "type";
+            COM_CART_ID = "cart_id",
+            COM_FOOD_ID = "food_id";
 
     public static final String CONFIG_OTP_SENDER_ID = "HAKBPL",
             CONFIG_SMS_DELIMITER = ":";

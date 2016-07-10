@@ -59,7 +59,12 @@
         </activity>
         <activity android:name=".activity.RestaurantFoodCategoryListActivity" />
         <activity android:name=".activity.RestaurantFoodListActivity" />
-
+        <activity android:name=".activity.CartActivity"
+            android:parentActivityName=".activity.RestaurantListActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.RestaurantListActivity" />
+        </activity>
         <!--
             The API key for Google Maps-based APIs is defined as a string resource.
             (See the file "res/values/google_maps_api.xml").
@@ -72,7 +77,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".activity.CartActivity"></activity>
+
     </application>
 
 </manifest>
