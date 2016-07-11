@@ -45,7 +45,7 @@
             android:layout_height="wrap_content"
             style="@style/Base.TextAppearance.AppCompat.Medium"
             android:textColor="@color/primary_text"
-            android:id="@+id/total_item"
+            android:id="@+id/total_item_count"
             android:layout_alignParentTop="true"/>
 
         <TextView
@@ -55,14 +55,14 @@
             android:layout_alignParentEnd="true"
             style="@style/Base.TextAppearance.AppCompat.Medium"
             android:textColor="@color/primary_text"
-            android:id="@+id/total_cost"
+            android:id="@+id/total_item_cost"
             android:layout_alignParentTop="true"/>
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:layout_below="@+id/total_item"
+            android:layout_below="@+id/total_item_count"
             android:text="@string/proceed_to_checkout"
             android:textColor="@color/icons"
             android:id="@+id/proceed_to_checkout"

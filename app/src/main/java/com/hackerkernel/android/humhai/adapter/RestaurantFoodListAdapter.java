@@ -140,8 +140,8 @@ public class RestaurantFoodListAdapter extends RecyclerView.Adapter<RestaurantFo
         }
 
         /*
-    * Method to add food item to cart in background
-    * */
+         * Method to add food item to cart in background
+         * */
         private void addFoodItemToCartInBackground(final String foodId) {
             if (Util.isNetworkAvailable()){
                 pd.show();

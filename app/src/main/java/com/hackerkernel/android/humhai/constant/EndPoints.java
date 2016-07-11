@@ -4,7 +4,8 @@ package com.hackerkernel.android.humhai.constant;
  * Class to hold all the
  */
 public class EndPoints {
-    private static final String SERVER_URL = "http://api.hackerkernel.com/humhai/";
+    private static final String SERVER_URL = "http://192.168.164.2/co/humhai/";
+    //private static final String SERVER_URL = "http://api.hackerkernel.com/humhai/";
     private static final String VERSION = "v1/";
     private static final String BASE_URL = SERVER_URL + VERSION;
     public static final String REGISTER = BASE_URL + "register.php",
@@ -18,5 +19,6 @@ public class EndPoints {
             GET_FOOD_LIST =  BASE_URL + "getFoodList.php",
             ADD_FOOD_TO_CART = BASE_URL + "addToCart.php",
             MINUS_FOOD_FROM_CART = BASE_URL + "minusFromCart.php",
-            GET_CART_LIST = BASE_URL + "getCartList.php";
+            GET_CART_LIST = BASE_URL + "getCartList.php",
+            CHECKOUT = BASE_URL + "checkout.php";
 }

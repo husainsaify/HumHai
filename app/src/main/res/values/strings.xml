@@ -22,4 +22,5 @@
     <string name="rupee_sign">\u20B9</string>
     <string name="check_your_internet_connection">Check your internet connection</string>
     <string name="proceed_to_checkout">Proceed To Checkout</string>
+    <string name="confirm_order">Confirm order</string>
 </resources>

@@ -16,7 +16,6 @@ public class Constants {
             COM_MOBILE = "mobile",
             COM_PASSWORD = "password",
             COM_EMAIL = "email",
-            COM_IMG = "img",
             COM_HOTEL_ID = "hotel_id",
             COM_IMAGE = "image",
             COM_FOOD_TYPE_ID = "food_type_id",
@@ -33,7 +32,9 @@ public class Constants {
             COM_PRICE = "price",
             COM_TITLE = "title",
             COM_CART_ID = "cart_id",
-            COM_FOOD_ID = "food_id";
+            COM_FOOD_ID = "food_id",
+            COM_ADDRESS = "address",
+            COM_GIVEN_MOBILE = "give_mobile";
 
     public static final String CONFIG_OTP_SENDER_ID = "HAKBPL",
             CONFIG_SMS_DELIMITER = ":";
