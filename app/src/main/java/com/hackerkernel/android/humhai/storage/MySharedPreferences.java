@@ -25,7 +25,8 @@ public class MySharedPreferences {
             KEY_USER_MOBILE = "mobile",
             KEY_USER_EMAIL = "email",
             KEY_USER_LATITUDE = "latitude",
-            KEY_USER_LONGITUDE ="longitude";
+            KEY_USER_LONGITUDE ="longitude",
+            KEY_USER_ADDRESS = "address";
 
     //boolean keys
     public static String BOL_KEY_APP_INTRO = "appintro";
@@ -119,6 +120,11 @@ public class MySharedPreferences {
     }
     public String getUserLongitude(){
         return mSharedPreference.getString(KEY_USER_LONGITUDE,KEY_DEFAULT);
-
+    }
+    public void setUserAddress(String address){
+        mSharedPreference.edit().putString(KEY_USER_ADDRESS,address).apply();
+    }
+    public String getUserAddress(){
+        return mSharedPreference.getString(KEY_USER_ADDRESS,KEY_DEFAULT);
     }
 }

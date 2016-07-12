@@ -3,12 +3,15 @@ package com.hackerkernel.android.humhai.activity;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.Location;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -24,6 +27,11 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.hackerkernel.android.humhai.R;
 import com.hackerkernel.android.humhai.infrastructure.BaseAuthActivity;
+import com.hackerkernel.android.humhai.storage.MySharedPreferences;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
 
 public class HomeActivity extends BaseAuthActivity implements
         OnMapReadyCallback,
@@ -39,6 +47,7 @@ public class HomeActivity extends BaseAuthActivity implements
 
     //Google ApiClient
     private GoogleApiClient googleApiClient;
+    private MySharedPreferences sp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +65,9 @@ public class HomeActivity extends BaseAuthActivity implements
                 .addOnConnectionFailedListener(this)
                 .addApi(LocationServices.API)
                 .build();
+
+        //init sp
+        sp = MySharedPreferences.getInstance(this);
 
         getCurrentLocation();
     }
@@ -105,6 +117,31 @@ public class HomeActivity extends BaseAuthActivity implements
                 //Getting longitude and latitude
                 longitude = location.getLongitude();
                 latitude = location.getLatitude();
+
+                //save longitude & latitude to sp
+                sp.setUserLongitude(longitude+"");
+                sp.setUserLatitude(latitude+"");
+
+                Geocoder geocoder = new Geocoder(this, Locale.getDefault());
+
+                List<Address> addresses  = null;
+                try {
+                    addresses = geocoder.getFromLocation(latitude,longitude, 1);
+
+                    Address returnedAddress = addresses.get(0);
+                    StringBuilder strReturnedAddress = new StringBuilder("");
+
+                    for (int i = 0; i < returnedAddress.getMaxAddressLineIndex(); i++) {
+                        strReturnedAddress.append(returnedAddress.getAddressLine(i)).append("\n");
+                    }
+
+                    //save address into sp
+                    sp.setUserAddress(strReturnedAddress.toString());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+
 
                 //moving the map to location
                 moveMap();

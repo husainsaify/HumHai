@@ -1,11 +1,10 @@
 package com.hackerkernel.android.humhai.activity;
 
 import android.app.ProgressDialog;
-import android.graphics.Color;
+import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -268,6 +267,9 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
 
         //set user stored mobile number to edittext
         mobileView.setText(sp.getUserMobile());
+
+        //set user address
+        addressView.setText(sp.getUserAddress());
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setView(view);
